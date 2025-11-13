@@ -1,29 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void)
-{
-    int i;
-    int grade[5];       
-    int *ptr;            
-    int sum = 0;
-   
+int main(void) 
+{ 
+int i = 100; 
+int *p = &i; 
+int **q = &p;
 
-    for (i = 0; i < 5; i++)
-    {
-        printf("grade[%i] = ", i);
-        scanf("%d", &grade[i]);
-    }
+*p = 200; 
 
-
-    for (i = 0; i < 5; i++)
-    {
-        printf("grade[%i] = %i\n", i, *(grade+ i));
-        sum += *(grade+ i);
-    }
-
-   
-    printf("average: %i\n", sum/5);
+printf("i = %d, *p = %d, **q = %d\n", i, *p, **q); 
+**q = 300; 
+printf("i = %d, *p = %d, **q = %d\n", i, *p, **q); 
 
   
   system("PAUSE");	
